@@ -159,22 +159,39 @@ body {
 .card-body button:hover {
   background: linear-gradient(135deg, #1565c0, #1e88e5);
 }
-
-/* FOOTER */
-footer {
-  background-color: #3498db;
-  color: white;
-  padding: 40px 20px;
-  display: flex;
-  justify-content: center;
-}
-
 .footer-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  gap:15px;
+  justify-content: center;
+  padding: 20px 0px;
+  background-color: #3498db;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  line-height: 1.6;
+}
 
+/* Chaque ligne est centrée, mais espacée pour former une pyramide */
+.ligne {
+  margin: 5px 0;
+  width: 100%;
+}
+
+/* Espacements pyramidaux */
+.ligne1 {
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+}
+
+.ligne2 {
+  font-size: 1rem;
+  letter-spacing: 6px;
+}
+
+.ligne3 {
+  font-size: 0.9rem;
+  letter-spacing: 9px;
 }
 
 .slideshow-container {
@@ -234,17 +251,47 @@ footer {
   .card {
     width: 45%;
   }
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  background-color: #3498db;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  line-height: 1.6;
+}
 
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap:20px;
-  }
+/* Chaque ligne est centrée, mais espacée pour former une pyramide */
+.ligne {
+  margin: 5px 0;
+  width: 100%;
+}
 
-  .footer{
-    padding: 30px 20px;
-  }
+/* Espacements pyramidaux */
+.ligne1 {
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+}
+
+.ligne2 {
+  font-size: 1rem;
+  letter-spacing: 6px;
+}
+
+.ligne3 {
+  font-size: 0.9rem;
+  letter-spacing: 9px;
+}
+
+/* Effet pyramidal visuel (centré et équilibré) */
+.footer-container p {
+  text-align: center;
+  transform: translateX(0);
+}
+
 
   .slideshow-container {
     width: 80%;
@@ -334,13 +381,47 @@ footer {
   .card img {
     height: 180px;
   }
+ .footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  background-color: #3498db;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  line-height: 1.6;
+}
 
-  /* FOOTER */
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
+/* Chaque ligne est centrée, mais espacée pour former une pyramide */
+.ligne {
+  margin: 5px 0;
+  width: 100%;
+}
+
+/* Espacements pyramidaux */
+.ligne1 {
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+}
+
+.ligne2 {
+  font-size: 1rem;
+  letter-spacing: 6px;
+}
+
+.ligne3 {
+  font-size: 0.9rem;
+  letter-spacing: 9px;
+}
+
+/* Effet pyramidal visuel (centré et équilibré) */
+.footer-container p {
+  text-align: center;
+  transform: translateX(0);
+}
+
 
   .slideshow {
     height: 120px;
