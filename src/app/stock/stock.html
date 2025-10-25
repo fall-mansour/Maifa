@@ -1,0 +1,17 @@
+<div class="stock-container">
+  <h2> 📦 Gestion du Stock </h2>
+
+  <div *ngFor="let s of stocks" class="stock-card">
+    <img [src]="s.img" [alt]="s.description" />
+    <div class="infos">
+      <h3>{{ s.marque }} - {{ s.modele }}</h3>
+      <p>{{ s.description }}</p>
+      <p>Fournisseur : <strong>{{ s.fournisseur }}</strong></p>
+      <p>Catégorie : <strong>{{ s.categorie }}</strong></p>
+      <p>Année : {{ s.annee }}</p>
+      <p>Prix : {{ s.Prix | number }} FCFA</p>
+      <p>Quantité : {{ s.quantite }}</p>
+    </div>
+  </div>
+</div>
+

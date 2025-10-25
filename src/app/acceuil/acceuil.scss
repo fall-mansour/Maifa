@@ -1,0 +1,352 @@
+/* =========================================================
+   STYLE GLOBAL
+========================================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+}
+
+/* =========================================================
+   🟦 SECTION PC (≥ 1024px)
+========================================================= */
+
+/* HEADER */
+.entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3498db;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.entete .gauche {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.entete h1 {
+  color: #fff;
+  font-size: 1.8rem;
+  font-family: 'Arial', sans-serif;
+}
+
+.entete .barre {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  width: 250px;
+  max-width: 40vw;
+}
+
+.entete .connexion,
+.entete .chariot {
+  color: black;
+  background-color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* FORMULAIRE */
+.form-pieces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background-color: #fff;
+  padding: 25px 35px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  max-width: 1200px;
+  margin: 40px auto;
+  align-items: center;
+}
+
+.form-pieces select,
+.form-pieces input {
+  flex: 1 1 200px;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.form-pieces select:focus,
+.form-pieces input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 8px rgba(52,152,219,0.4);
+}
+
+/* CARTES */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 40px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.card-body h3 {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.card-body p {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.card-body .price {
+  font-weight: bold;
+  color: #1e88e5;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+.card-body button {
+  margin-top: 15px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #1e88e5, #42a5f5);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.card-body button:hover {
+  background: linear-gradient(135deg, #1565c0, #1e88e5);
+}
+
+/* FOOTER */
+footer {
+  background-color: #3498db;
+  color: white;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap:15px;
+
+}
+
+.slideshow-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  height: 180px;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.slideshow img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  border-radius: 10px;
+}
+
+.slideshow img.active {
+  opacity: 1;
+}
+
+/* =========================================================
+   🟧 SECTION TABLETTE (768px à 1023px)
+========================================================= */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .entete {
+    flex-wrap: wrap;
+    padding: 15px 20px;
+  }
+
+  .entete h1 {
+    font-size: 1.6rem;
+  }
+
+  .entete .barre {
+    width: 180px;
+  }
+
+  .form-pieces {
+    gap: 15px;
+    padding: 20px 25px;
+  }
+
+  .container {
+    gap: 20px;
+    padding: 25px;
+  }
+
+  .card {
+    width: 45%;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap:20px;
+  }
+
+  .footer{
+    padding: 30px 20px;
+  }
+
+  .slideshow-container {
+    width: 80%;
+    height: 160px;
+  }
+}
+
+/* =========================================================
+   🟩 SECTION SMARTPHONE (≤ 767px)
+========================================================= */
+@media (max-width: 767px) {
+
+  /* HEADER */
+  .entete {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3498db;
+    padding: 10px 15px;
+    position: relative;
+  }
+
+  .entete .gauche {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .entete h1 {
+    font-size: 1.3rem;
+    color: #fff;
+  }
+
+  /* BARRE DE RECHERCHE EN DESSOUS DU HEADER */
+  .entete .barre {
+    position: absolute;
+    top: 100%;               /* Juste sous le header */
+    left: 50%;               /* On centre horizontalement */
+    transform: translateX(-50%); /* Pour occuper toute la largeur */
+    width: 100vw;            /* vw = viewport width (pleine largeur écran) */
+    background-color: #f0f0f0;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .entete .barre::placeholder {
+    color: #888;
+  }
+
+  .entete .connexion,
+  .entete .chariot {
+    color: black;
+    background-color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+
+  /* Ajoute un espace sous le header pour la barre */
+  body {
+    padding-top: 65px;
+  }
+
+  /* FORMULAIRE */
+  .form-pieces {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+
+  .form-pieces select,
+  .form-pieces input {
+    flex: 1 1 100%;
+  }
+
+  /* CARTES */
+  .card {
+    width: 90%;
+  }
+
+  .card img {
+    height: 180px;
+  }
+
+  /* FOOTER */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .slideshow {
+    height: 120px;
+  }
+
+  .icone {
+    border-radius: 80%;
+  }
+}

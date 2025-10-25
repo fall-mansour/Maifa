@@ -1,0 +1,138 @@
+<html>
+
+<body>
+
+<header class="entete">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+
+  <h1>🇸🇳 Maifa_auto ⚙️</h1>
+  <input type="search" class='barre' placeholder="🔎 Rechercher une pièce..." />
+  <a class="connexion" [routerLink]="['/connexion']">Connexion</a>
+  <a href="" class="chariot">Chariot 🛒</a>
+
+
+</header>
+
+<form class="form-pieces">
+  <select>
+    <option value="" disabled selected>Marque</option>
+    <option value="Peugeot">Peugeot</option>
+    <option value="Renault">Renault</option>
+    <option value="Dacia">Dacia</option>
+    <option value="Skoda">Skoda</option>
+    <option value="BMW">BMW</option>
+    <option value="Audi">Audi</option>
+    <option value="Hyundai">Hyundai</option>
+    <option value="Kia">Kia</option>
+    <option value="citroen">Citroen</option>
+    <option value="Porshe">Porshe</option>
+  </select>
+
+
+  <select>
+    <option value="" disabled selected>Année</option>
+    <option value="2025">2025</option>
+    <option value="2024">2024</option>
+    <option value="2023">2023</option>
+    <option value="2022">2022</option>
+    <option value="2021">2021</option>
+    <option value="2020">2020</option>
+    <option value="2019">2019</option>
+    <option value="2018">2018</option>
+    <option value="2017">2017</option>
+    <option value="2016">2016</option>
+    <option value="2015">2015</option>
+    <option value="2014">2014</option>
+    <option value="2013">2013</option>
+    <option value="2012">2012</option>
+    <option value="2011">2011</option>
+    <option value="2010">2010</option>
+
+  </select>
+
+  <input type="text" placeholder="Modèle" />
+
+  <select>
+    <option value="" disabled selected>Catégorie Pièces</option>
+    <option value="moteur">Moteur</option>
+    <option value="freinage">Freinage</option>
+    <option value="suspension">Suspension</option>
+    <option value="eclairage">Éclairage</option>
+    <option value="carosserie">Carrosserie</option>
+    <option value="interieur">Intérieur</option>
+    <option value="electronique">Électronique</option>
+    <option value="pneumatique">Pneumatiques</option>
+    <option value="transmission">Transmission</option>
+    <option value="climayisation">Climatisation</option>
+  </select>
+</form>
+
+<div class="container">
+  <div class="card" *ngFor="let piece of pieces">
+    <img [src]="piece.img" [alt]="piece.marque + ' ' + piece.modele" />
+    <div class="card-body">
+      <h3>{{ piece.marque }} {{ piece.modele }}</h3>
+      <p>{{ piece.description }}</p>
+      <div class="details">
+        Année : {{ piece.annee }}
+      </div>
+      <div class="price">{{ piece.Prix   | currency:  'XOF':'symbol':'1.0-0' }}</div>
+      <button>Voir Détails</button>
+    </div>
+  </div>
+</div>
+
+
+<footer class="pied-de-page">
+  <div class="footer-container">
+    <!-- Bloc texte à gauche -->
+    <div class="bloc">
+      <h4>Akh Maifa_auto, Weur ba soon diekhna !!!</h4>
+      <br>
+      <p>Equipe support : maifaauto@mecaequip.sn</p>
+      <br>
+         <p>Copyright 2025, tous droits réservés.</p>
+    </div>
+
+    <!-- Bloc diaporama à droite -->
+    <div class="slideshow-container">
+      <div class="slideshow"></div>
+    </div>
+  </div>
+</footer>
+
+ <script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Liste des images à faire défiler
+  const imagePaths = [
+    'assets/img1.jpg',
+    'assets/img2.jpg',
+    'assets/img3.jpg'
+  ];
+
+  const slideshow = document.querySelector('.slideshow');
+
+  // Création automatique des balises <img>
+  imagePaths.forEach(src => {
+    const img = document.createElement('img');
+    img.src = src;
+    slideshow.appendChild(img);
+  });
+
+  // Défilement des images
+  const images = slideshow.querySelectorAll('img');
+  let current = 0;
+  images[current].classList.add('active');
+
+  setInterval(() => {
+    images[current].classList.remove('active');
+    current = (current + 1) % images.length;
+    images[current].classList.add('active');
+  }, 5000); // changement toutes les 5 secondes
+});
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+/* --- Container principal --- */
+.stock-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f7fa;
+}
+
+/* --- Header --- */
+.stock-container h2 {
+  text-align: center;
+  background-color: #3498db; /* bleu clair */
+  color: #003366; /* bleu foncé */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+/* --- Liste des cartes --- */
+.stock-card {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stock-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* --- Image --- */
+.stock-card img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+}
+
+/* --- Infos --- */
+.infos {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.infos h3 {
+  margin: 0 0 10px 0;
+  color: #003366;
+}
+
+.infos p {
+  margin: 3px 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .stock-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stock-card img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .infos {
+    text-align: center;
+  }
+}
