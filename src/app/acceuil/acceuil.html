@@ -7,9 +7,9 @@
 
 
   <h1>🇸🇳 Maifa_auto ⚙️</h1>
-  <input type="search" class='barre' placeholder="🔎 Rechercher une pièce..." />
+  <input type="search" class='barre' placeholder="🔎 Rechercher une pièce..." [(ngModel)]="searchText" />
   <a class="connexion" [routerLink]="['/connexion']">Connexion</a>
-  <a href="" class="chariot">Chariot 🛒</a>
+  <p class="chariot"> 🛒</p>
 
 
 </header>
@@ -69,7 +69,7 @@
 </form>
 
 <div class="container">
-  <div class="card" *ngFor="let piece of pieces">
+  <div class="card" *ngFor="let piece of filteredPieces">
     <img [src]="piece.img" [alt]="piece.marque + ' ' + piece.modele" />
     <div class="card-body">
       <h3>{{ piece.marque }} {{ piece.modele }}</h3>
@@ -77,11 +77,16 @@
       <div class="details">
         Année : {{ piece.annee }}
       </div>
-      <div class="price">{{ piece.Prix   | currency:  'XOF':'symbol':'1.0-0' }}</div>
+      <div class="price">{{ piece.Prix | currency: 'XOF':'symbol':'1.0-0' }}</div>
+
       <button>Voir Détails</button>
     </div>
   </div>
+
+  <!-- Message si aucune pièce ne correspond -->
+  <p *ngIf="filteredPieces.length === 0">❌ Aucune pièce trouvée.</p>
 </div>
+
 
 
 <footer class="pied-de-page">
@@ -90,7 +95,7 @@
     <div class="bloc">
       <h4 class="ligne ligne1">Akh Maifa_auto, Weur ba soon diekhna !!!</h4>
       <br>
-      <p class="ligne ligne2">Equipe support : maifaauto@mecaequip.sn</p>
+      <p class="ligne ligne2">Equipe support : maifa_auto@mecaequip.sn</p>
       <br>
          <p class="ligne ligne3">Copyright 2025, tous droits réservés.</p>
     </div>
@@ -101,38 +106,6 @@
     </div>
   </div>
 </footer>
-
- <script>
-document.addEventListener('DOMContentLoaded', () => {
-  // Liste des images à faire défiler
-  const imagePaths = [
-    'assets/img1.jpg',
-    'assets/img2.jpg',
-    'assets/img3.jpg'
-  ];
-
-  const slideshow = document.querySelector('.slideshow');
-
-  // Création automatique des balises <img>
-  imagePaths.forEach(src => {
-    const img = document.createElement('img');
-    img.src = src;
-    slideshow.appendChild(img);
-  });
-
-  // Défilement des images
-  const images = slideshow.querySelectorAll('img');
-  let current = 0;
-  images[current].classList.add('active');
-
-  setInterval(() => {
-    images[current].classList.remove('active');
-    current = (current + 1) % images.length;
-    images[current].classList.add('active');
-  }, 5000); // changement toutes les 5 secondes
-});
-</script>
-
 
 </body>
 </html>
