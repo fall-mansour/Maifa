@@ -80,7 +80,8 @@
       <h3>{{ piece.marque }} {{ piece.modele }}</h3>
       <p>{{ piece.description }}</p>
       <div class="details">
-        Année : {{ piece.annee }}
+       <p> Année : {{ piece.annee }}</p>
+        <p>Fournisseur : {{ piece.Fournisseur }}</p>
       </div>
       <div class="price">{{ piece.Prix | currency: 'XOF':'symbol':'1.0-0' }}</div>
 
