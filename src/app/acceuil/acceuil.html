@@ -83,7 +83,11 @@
        <p> Année : {{ piece.annee }}</p>
         <p>Fournisseur : {{ piece.Fournisseur }}</p>
       </div>
-      <div class="price">{{ piece.Prix | currency: 'XOF':'symbol':'1.0-0' }}</div>
+      <div class="etat">
+        <p>État : {{ piece.etat }}</p>
+
+      </div>
+      <div class="price">{{ piece.Prix  | currency: 'XOF' :'symbol':'1.0-0' }}</div>
 
       <button>Voir Détails</button>
     </div>
@@ -103,7 +107,12 @@
       <br>
       <p class="ligne ligne2">Equipe support : maifa_auto@mecaequip.sn</p>
       <br>
-         <p class="ligne ligne3">Copyright 2025, tous droits réservés.</p>
+      <p class="ligne ligne3" font-size="100px">📞+221 77 649 05 36</p>
+      <br>
+      <br>
+      <p class="ligne ligne4" font-size="100px">📍Rufisque, Rue Ousane soce Diop</p>
+      <br>
+         <p class="ligne ligne5">Copyright 2025, tous droits réservés.</p>
     </div>
 
     <!-- Bloc diaporama à droite -->
